@@ -10,7 +10,7 @@
 
 
 
-<?php vendor_html_helper::contentheader('Notifications <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Thông báo', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 	<div class="row content">
 		<div class="col-xs-12 col-lg-12">
@@ -18,7 +18,6 @@
 			    <div class="box-header">
 		    		<div class="row" id="records-header">
 		    			<div class="col-sm-8 col-xs-6">
-			      			<h2 class="box-title">Notifications</h2>
 		    			</div>
 		    	
 		    			<div class="col-sm-8 col-xs-6">

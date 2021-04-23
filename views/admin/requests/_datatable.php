@@ -41,14 +41,14 @@
 								<input type="checkbox" name="">
 							</th>
 							<th class="mobileHide">ID</th>
-							<th><span class="mobileHide">Full</span>Name</th>
-							<th class="mobileHide">Start time</th>
-							<th class="mobileHide">End time</th>
-							<th class="mobileShow">Off time</th>
-							<th class="webShow">Reason</th>
-							<th class="webShow">Date request</th>
-							<th>Status</th>
-							<th>Action</th>
+							<th><span class="mobileHide">Tên người dùng</span></th>
+							<th class="mobileHide">Thời gian bắt đầu</th>
+							<th class="mobileHide">Thời gian kết thúc</th>
+							<th class="mobileShow"></th>
+							<th class="webShow">Lý do</th>
+							<th class="webShow">Ngày xin phép</th>
+							<th>Trạng thái</th>
+							<th>Hành động</th>
 						</tr>
 					</thead>
 					<tbody id="tbody-requests" class="records">
@@ -126,14 +126,14 @@
 								<input type="checkbox" name="">
 							</th>
 	                		<th class="mobileHide">ID</th>
-							<th><span class="mobileHide">Full</span>Name</th>
-							<th class="mobileHide">Start time</th>
-							<th class="mobileHide">End time</th>
-							<th class="mobileShow">Off time</th>
-							<th class="webShow">Reason</th>
-							<th class="webShow">Date request</th>
-							<th>Status</th>
-	                		<th>Action</th>
+							<th><span class="mobileHide">Tên người dùng</span></th>
+							<th class="mobileHide">Thời gian bắt đầu</th>
+							<th class="mobileHide">Thời gian kết thúc</th>
+							<th class="mobileShow"></th>
+							<th class="webShow">Lý do</th>
+							<th class="webShow">Ngày xin phép</th>
+							<th>Trạng thái</th>
+	                		<th>Hành động</th>
 	                	</tr>
 	                </tfoot>
 				</table>
@@ -147,9 +147,9 @@
 	</div>
 </div>
 
-<div class="modal modal-success fade" id="modal-success">
-  <div class="modal-dialog">
-    <div class="modal-content">
+<!-- <div class="modal modal-success fade" id="modal-success">
+  <!-- <div class="modal-dialog"> -->
+    <!-- <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span></button>
@@ -161,11 +161,11 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
       </div>
-    </div>
+    </div> -->
     <!-- /.modal-content -->
-  </div>
+  <!-- </div> -->
   <!-- /.modal-dialog -->
-</div>
+<!-- </div>  -->
 
 <div class="modal modal-danger fade" id="modal-danger">
   <div class="modal-dialog">

@@ -29,7 +29,11 @@ class users_controller extends vendor_backend_controller {
 			if($_FILES['image']['tmp_name'])
 				$userData['avata'] = $this->uploadImg($_FILES);
 			$valid = $um->validator($userData);
-			if($valid['status']) {
+			if($userData['password']!=$userData['confirmPassword']){
+				$this->record = $userData;
+				$this->errors['confirmPassword'] = 'password do not math';
+			}else if($valid['status']) {
+				unset($userData['confirmPassword']);
 				$userData['password'] = vendor_app_util::generatePassword($userData['password']);
 				if($um->addRecord($userData))
 					header("Location: ".vendor_app_util::url(["ctl"=>"users"]));
@@ -57,7 +61,12 @@ class users_controller extends vendor_backend_controller {
 			}
 
 			$valid = $um->validator($userData, $id);
-			if($valid['status']) {
+			if($userData['password']!=$userData['confirmPassword']){
+				$this->record = $userData;
+				$this->errors['confirmPassword'] = 'password do not math';
+			}else if($valid['status']) {
+				unset($userData['confirmPassword']);
+
 				if($userData['password'])
 					$userData['password'] = vendor_app_util::generatePassword($userData['password']);
 				else

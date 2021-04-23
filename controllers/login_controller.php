@@ -24,7 +24,7 @@ class login_controller extends vendor_main_controller {
 			$auth = new vendor_auth_model();
 
 			if (!vendor_app_util::validationEmail($user['email'])){
-				$this->errors['message'] = "Wrong email!";
+				$this->errors['message'] = "Wrong email or password!";
 			}
 			else if($auth->login($user)) {
 				log_model::setLog(log_model::$type['login']);

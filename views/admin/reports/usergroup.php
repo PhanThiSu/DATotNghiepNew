@@ -7,34 +7,16 @@
 	var nopp 		= parseInt(<?php echo $this->records['nopp']; ?>);
 </script>
 
-<?php vendor_html_helper::contentheader('Reports <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Quản lý báo cáo', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 <section class="content">
 	<div class="row">
 		<div class="col-xs-12">
 			<div class="box">
-			    <div class="box-header with-border row" id="reports-header">
-					<div class="col-sm-6">
-						<h3 class="box-title">
-							<?php if($this->timetype!='all') echo 'Report '.$this->time; else echo 'All reports ';?> of <?=vendor_html_helper::link($this->fullname, ["ctl"=>"users", "act"=>"view/".$this->user_id])?><?php
-							if (isset($this->groupName)) echo ' in '.vendor_html_helper::link($this->groupName, ["ctl"=>"groups", "act"=>"view/".$this->group_id]); ?>
-						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3 class="box-title text-info pull-right text-right"> <?php if($this->timetype=='all') echo 'All tasks, '; else echo 'This '.$this->timetype?> <?=vendor_html_helper::link($this->fullname, ["ctl"=>"users", "act"=>"view/".$this->user_id])?> have worked <strong class="text-danger"><?=$this->timetotal;?></strong> hour(s)</h3>
-					</div>
-			    </div>
+			    
 			    <div class="box-body row">
 	    			<div class="col-sm-10 col-xs-10">
 	    				<div class="row">
-							<div class="btn-group btn-toggle col-md-5"> 
-								<button type="submit" form="form-report-all" value="Submit" class="btn <?=($this->timetype=='all')? 'btn-danger active':'btn-default';?>">All</button>
-								<button class="btn <?=($this->timetype=='year')? 'btn-danger active':'btn-default';?>">Year</button>
-							    <button class="btn <?=($this->timetype=='month')? 'btn-danger active':'btn-default';?>">Month</button>
-							    <button class="btn <?=($this->timetype=='week')? 'btn-danger active':'btn-default ';?>">Week</button>
-							    <button class="btn <?=($this->timetype=='date')? 'btn-danger active':'btn-default ';?>">Date</button>
-							</div>
-
 							<form id="form-report-all" action="<?php echo vendor_app_util::url(["ctl"=>"reports", "act"=>'usergroup/id_group='.$this->group_id.'/id_user='.$this->user_id]); ?>" method="post" enctype="multipart/form-data" class="form-inline form-report col-md-8 <?=($this->timetype=='all')? '':'hide';?>">
 								<div class="form-group">
 			      				</div>

@@ -16,10 +16,10 @@
             </a>
             <ul class="treeview-menu content_ul" style="background:white;margin-bottom:20px; margin-top:20px;padding:20px;">
                 <li style="white-space:normal;">
-                    <h4>Title: <span><?= $record['title'] ?></span></h4></br>
-                    <h4>Content:</h4></br>
+                    <h4>Chủ đề: <span><?= $record['title'] ?></span></h4></br>
+                    <h4>Nội dung:</h4></br>
                     <div class='ml-1'><?= $record['content'] ?></div></br>
-                    <h4>By: <span><?= $record['users_firstname']." ".$record['users_lastname'] ?></span></h4>
+                    <h4>Từ: <span><?= $record['users_firstname']." ".$record['users_lastname'] ?></span></h4>
                 </li>
             </ul>
         </li>

@@ -2,11 +2,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <p><b>TPM</b> User Side</p>
+    <p><b>TPM</b> User</p>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body login-page">
-    <p class="login-box-msg">Sign in to start your session</p>
+    <p class="login-box-msg">ĐĂNG NHẬP</p>
     <?php if($this->errors) { ?>
     <div class="alert alert-danger alert-dismissible fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -27,17 +27,17 @@
           <div class="checkbox icheck">
           <label class="" style="margin-left:20px;">
                 <input name="remember" id="remember" type="checkbox" >
-              Remember Me
+              Ghi nhớ mật khẩu
             </label>
           </div>
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_submit">Sign In</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_submit">Đăng nhập</button>
         </div>
         <!-- /.col -->
       </div>
-        <a href="<?php echo vendor_app_util::url(array('ctl'=>'login','act'=> 'forgotPassWord' )); ?>">Forgot Password ?</a>
+        <a href="<?php echo vendor_app_util::url(array('ctl'=>'login','act'=> 'forgotPassWord' )); ?>">Quên mật khẩu ?</a>
       </div>
     </form>
 

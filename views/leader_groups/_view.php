@@ -14,12 +14,12 @@
 								}
 							} 
 						?>
-						<h3 class="box-title text-info">
-							Information of <?=$spn?> group
-						</h3>
+						<!-- <h3 class="box-title text-info">
+							Thông tin <?=$spn?> nhóm
+						</h3> -->
 					</div>
 					<div class="col-sm-6">
-						<h3 class="box-title text-info pull-right text-right">In <?=$spn;?> have total work time is <strong class="text-danger"><?=($this->group['group_time'])?$this->group['group_time']:0;?></strong> hour(s)</h3>
+						<!-- <h3 class="box-title text-info pull-right text-right">In <?=$spn;?> have total work time is <strong class="text-danger"><?=($this->group['group_time'])?$this->group['group_time']:0;?></strong> hour(s)</h3> -->
 					</div>
 			    </div>
 			    
@@ -34,10 +34,10 @@
 								<table id="table_reports" class="table table-bordered table-striped dataTable" role = "grid" aria-describedby="example1_info" controller="reports" >
 									<thead>
 										<tr role="row">
-											<th>Fullname</th>
-											<th>Total Time</th>
-											<th>Percent</th>
-											<th>Action</th>
+											<th>Tên người dùng</th>
+											<th>Tổng thời gian</th>
+											<th>Phần trăm</th>
+											<th>Các báo cáo</th>
 										</tr>
 									</thead>
 									<tbody id="tbody-reports">
@@ -65,10 +65,10 @@
 									</tbody>
 									<tfoot>
 					                	<tr>
-											<th>Fullname</th>
-											<th>Total Time</th>
-											<th>Percent</th>
-											<th>Action</th>
+											<th>Tên người dùng</th>
+											<th>Tổng thời gian</th>
+											<th>Phần trăm</th>
+											<th>Các báo cáo</th>
 					                	</tr>
 					                </tfoot>
 								</table>

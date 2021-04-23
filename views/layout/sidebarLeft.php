@@ -106,8 +106,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li <?=($app['ctl']=='users' && $app['act']=='profile')? 'class="active"':'';?>><a href="<?php echo vendor_app_util::url(array('ctl'=>'users', 'act'=>'profile')); ?>"><i class="fa fa-male"></i>Thông tin cá nhân</a></li>
-          <li <?=($app['ctl']=='users' && $app['act']=='changepass')? 'class="active"':'';?>><a href="<?php echo vendor_app_util::url(array('ctl'=>'users', 'act'=>'changepass')); ?>"><i class="fa fa-key"></i>Thay đổi mật khẩu</a></li>
+          <li <?=($app['ctl']=='users' && $app['act']=='profile')? 'class="active"':'';?>><a href="#"><i class="fa fa-male"></i>Thông tin cá nhân</a></li>
+          <li <?=($app['ctl']=='users' && $app['act']=='changepass')? 'class="active"':'';?>><a href="#"><i class="fa fa-key"></i>Thay đổi mật khẩu</a></li>
           <li><a href="<?php echo vendor_app_util::url(array('ctl'=>'users','act'=>'logout')); ?>"><i class="fa fa-sign-in"></i>Đăng xuất</a></li>
         </ul>
       </li>

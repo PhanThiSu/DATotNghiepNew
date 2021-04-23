@@ -16,7 +16,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Change password</h4>
+        <h4 class="modal-title">Thay đổi mật khẩu</h4>
       </div>
       <div class="modal-body">
         <form class="form-horizontal">
@@ -25,19 +25,19 @@
               <p class="message"></p>
           </div>
           <div class="form-group">
-            <label for="current_password" class="col-sm-4 control-label">Current Password</label>
+            <label for="current_password" class="col-sm-4 control-label">Mật khẩu hiện tại</label>
             <div class="col-sm-8">
               <input type="password" class="form-control" id="current_password" placeholder="Password">
             </div>
           </div>
           <div class="form-group form-group-pass">
-            <label for="new_password" class="col-sm-4 control-label">New Password</label>
+            <label for="new_password" class="col-sm-4 control-label">Mật khẩu mới</label>
             <div class="col-sm-8">
               <input type="password" class="form-control" id="new_password" placeholder="New Password">
             </div>
           </div>
           <div class="form-group form-group-pass">
-            <label for="confirm_password" class="col-sm-4 control-label">Confirm Password</label>
+            <label for="confirm_password" class="col-sm-4 control-label">Xác nhận mật khẩu</label>
             <div class="col-sm-8">
               <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
               <span id="error-confirm-password" class="help-block"></span>
@@ -46,8 +46,8 @@
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-primary" id="savePassword">Save changes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+        <button type="button" class="btn btn-primary" id="savePassword">Lưu thay đổi</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->

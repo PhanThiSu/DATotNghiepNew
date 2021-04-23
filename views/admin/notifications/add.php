@@ -2,7 +2,7 @@
 <?php  
 	
 ?>
-<?php vendor_html_helper::contentheader('Notification <small>management</small>', [
+<?php vendor_html_helper::contentheader('Quản lý thông báo', [
     [
       'title' =>  'Index Notifications',
       'urlp'=>['ctl'=>$app['ctl']]

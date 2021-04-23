@@ -4,7 +4,7 @@
 		    <div class="box-body">
 				<fieldset>
 					<div id="legend">
-					  <legend class=""><?php echo ucwords($app['act'].' '.$app['ctl']); ?></legend>
+					  <legend class=""><?php echo ucwords('Thêm thông báo'); ?></legend>
 					</div>
 					<!--form id="form-notificactions-edit"-->
 					<form id="form-notificactions-edit" action="<?php echo vendor_app_util::url(["ctl"=>"notifications", "act"=>$app['act'] == 'edit'?$app['act']."/".$this->record['id']:$app['act']]); ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -17,7 +17,7 @@
 						<?php } ?>
 
 						<div class="form-group row">
-						  <label class="control-label col-md-3" for="firstname">Title</label>
+						  <label class="control-label col-md-3" for="firstname">Chủ đề</label>
 						  <div class="controls col-md-7">
 							<input <?php if($app['act']=='view') echo "disabled"; ?> type="text" id="title" name="notification[title]" placeholder="" class="form-control" value="<?php if(isset($this->record['title'])) echo $this->record['title']; ?>">
 							<?php if( isset($this->errors['title'])) { ?>
@@ -28,7 +28,7 @@
 
 						<?php if($app['act'] =='view'){ ?>
 							<div class="form-group row">
-							<label class="control-label col-md-3" for="firstname">Content</label>
+							<label class="control-label col-md-3" for="firstname">Nội dung</label>
 								<script>
 									{
 										let result = '<?php $this->errors['content']; ?>';
@@ -43,7 +43,7 @@
 						<?php }else{ ?>
 
 							<div class="form-group row">
-							<label class="control-label col-md-3" for="title_slug">Content</label>
+							<label class="control-label col-md-3" for="title_slug">Nội dung</label>
 							<div class="controls col-md-9">
 								<textarea <?php if($app['act']=='view') echo "disabled"; ?> type="text" id="editor1" name="notification[content]" placeholder="" class="form-control" value="<?php if(isset($this->record['content'])) echo $this->record['content']; ?>"></textarea>
 								<?php if( isset($this->errors['content'])) { ?>

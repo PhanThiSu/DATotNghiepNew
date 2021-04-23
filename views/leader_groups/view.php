@@ -1,6 +1,6 @@
 <?php include_once 'views/layout/'.$this->layout.'headerTop.php'; ?>
 
-<?php vendor_html_helper::contentheader('Groups <small>management</small>', [
+<?php vendor_html_helper::contentheader('Nhóm', [
     [
       'title' =>  'Groups',
       'urlp'=>['ctl'=>$app['ctl']]],

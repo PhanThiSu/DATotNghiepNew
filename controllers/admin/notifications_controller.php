@@ -53,7 +53,7 @@ class notifications_controller extends vendor_backend_controller {
 
 		if(count($records_user)) {
 			while($row = $records_user->fetch_assoc()) {
-				$nTo = 'TPM Admin';
+				$nTo = 'TPM Member';
 				$mTo = $row['email'];
 				$title = $notificationData['title'];
 				$content = "<h3> Hi ".$row['firstname']." ".$row['lastname']."</h3></br>".$notificationData['content'];

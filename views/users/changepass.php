@@ -1,7 +1,7 @@
 <?php include_once 'views/layout/'.$this->layout.'headerTop.php'; ?>
 <div class="login-box">
   <div class="login-logo">
-    <a href="javascript:void(0);"><b>TPM</b> Change password</a>
+    <a href="javascript:void(0);"><b>TPM</b> Thay đổi mật khẩu</a>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -26,7 +26,7 @@
       </div>
       <div class="row">
         <div class="col-xs-5 col-xs-offset-7">
-          <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_submit">Update</button>
+          <button type="submit" class="btn btn-primary btn-block btn-flat" name="btn_submit">Thay đổi</button>
         </div>
       </div>
     </form>

@@ -481,7 +481,7 @@ class reports_controller extends vendor_backend_controller
 			]);
 			if(!$checkReport){
 				if((strtotime($reportData['time_start']) - strtotime($reportData['time_end']))>=0){
-					$this->errors = ['database'=>'Date Start after Date End'];
+					$this->errors = ['database'=>'The data is empty!!!'];
 				}else{
 					if(!$reportData['user_id'])	$reportData['user_id'] = $_SESSION['user']['id'];
 					$reportData['date_report'] = date("Y-m-d");

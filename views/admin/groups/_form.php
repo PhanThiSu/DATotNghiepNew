@@ -11,7 +11,13 @@
 		    <div class="box-body">
 		    	<fieldset>
 				    <div id="legend">
-				      <legend class=""><?php echo ucwords($app['act'].' '.$app['ctl']); ?></legend>
+				      <legend class="">
+					  <?php
+                		if(ucwords($app['act'])==="Add")echo "Thêm nhóm";
+                		else if(ucwords($app['act'])==="Edit") echo "Sửa nhóm";
+                		else if(ucwords($app['act'])==="View") echo "Xem chi tiết nhóm";
+               			?>
+					</legend>
 				    </div>
 				    <?php if($app['act'] != 'view') { ?>
 				    	<form id="form-addgroup" action="<?php echo vendor_app_util::url(["ctl"=>"groups", "act"=>$app['act'] == 'edit'?$app['act']."/".$this->record['id']:$app['act']]); ?>" method="post" enctype="multipart/form-data">
@@ -27,7 +33,7 @@
 
 						    <div class="form-group row">
 						      <!-- First Name -->
-						      <label class="control-label col-md-3" for="name">Name</label>
+						      <label class="control-label col-md-3" for="name">Tên nhóm</label>
 						      <div class="controls col-md-7">
 						        <input <?php if($app['act']=='view') echo "disabled"; ?> type="text" id="name" name="name" placeholder="" class="form-control" value="<?php if(isset($this->record['name'])) echo $this->record['name']; ?>">
 						        <?php if( isset($this->errors['name'])) { ?>
@@ -39,13 +45,13 @@
 
 								<div class="form-group row user">
 						      <!-- User -->
-						      <label class="control-label col-md-3" for="leader_id">Leader </label>
+						      <label class="control-label col-md-3" for="leader_id">Nhóm trưởng </label>
 						      <div class="controls col-md-7">
 						      	<?php if($app['act']=='view') { ?>
 						        	<input disabled type="text" id="leader_id" name="leader_id" placeholder="" class="form-control" <?php echo (isset($this->leader))? "value='".$this->leader['firstname'].' '.$this->leader['lastname']."'":""; ?>>
 						        <?php } else { ?>
 						        	<select class="form-control select2" name="leader_id" id="leader_id" class="form-control">
-											<option value="">Select group leader</option>
+											<option value="">Chọn nhóm trưởng</option>
 						          <?php foreach($this->users as $user) { ?>
 								    <option <?=(isset($this->record['leader_id']) && $this->record['leader_id']==$user['id'])? 'selected="selected"':"" ?> 
 								    	value="<?=$user['id'];?>"><?=$user['firstname'].' '.$user['lastname'];?></option>
@@ -60,7 +66,7 @@
 
 							<div class="form-group row">
 						      	<!-- First Name -->
-						      	<label class="control-label col-md-3" for="name">Members</label>
+						      	<label class="control-label col-md-3" for="name">Thành viên</label>
 						      	<div class="controls col-md-7">
 									<select name="member_id" id="member_id" <?php if($app['act']=='view') echo "disabled"; ?> <?php if($app['act'] =='view') { ?> multiple data-placeholder="No members for group." <?php } else { ?> multiple data-placeholder="Add members for group." <?php } ?> class="form-control select2" >
 										<?php 
@@ -88,7 +94,7 @@
 						    </div>
 
 							<div class="form-group row">
-							    <label for="start_day" class="col-md-3 control-label">Start Date</label>
+							    <label for="start_day" class="col-md-3 control-label">Ngày bắt đầu</label>
 							    <div class="col-md-7">
 							      <input <?php if($app['act']=='view') echo "disabled"; ?> name="start_day" type="date" class="form-control" id="start_day" required <?php echo (isset($this->record))? "value='".$this->record['start_day']."'":""; ?>>
 						          <?php if( isset($this->errors['start_day'])) { ?>
@@ -98,7 +104,7 @@
 							</div>
 
 							<div class="form-group row">
-							    <label for="end_day" class="col-md-3 control-label">End Date</label>
+							    <label for="end_day" class="col-md-3 control-label">Ngày kết thúc</label>
 							    <div class="col-md-7">
 							      <input <?php if($app['act']=='view') echo "disabled"; ?> name="end_day" type="date" class="form-control" id="end_day" required <?php echo (isset($this->record))? "value='".$this->record['end_day']."'":""; ?>>
 						          <?php if( isset($this->errors['end_day'])) { ?>
@@ -109,7 +115,7 @@
 							
 						    <div class="form-group row">
 						      <!-- E-mail -->
-						      <label class="control-label col-md-3" for="description">Description:</label>
+						      <label class="control-label col-md-3" for="description">Mô tả:</label>
 						      <div class="controls col-md-7">
 						        <textarea <?php if($app['act']=='view') echo "disabled"; ?> id="description" name="description" placeholder="Description..." class="form-control" value="<?php if(isset($this->record['description'])) echo($this->record['description']); ?>"><?php echo (isset($this->record))? " ".$this->record['description']." ":""; ?></textarea>
 						        <?php if( isset($this->errors['description'])) { ?>
@@ -121,7 +127,7 @@
 							<?php if($app['act'] != 'add') { ?>
 								<div class="form-group row">
 								<!-- First Name -->
-								<label class="control-label col-md-3" for="user_created">User created</label>
+								<label class="control-label col-md-3" for="user_created">Người tạo</label>
 								<div class="controls col-md-7">
 									<input disabled type="text" id="user_created" name="user_created" placeholder="" class="form-control" 
 										value="<?php 
@@ -140,7 +146,7 @@
 
 						    <div class="form-group row">
 						      <!-- Status -->
-						      <label class="control-label col-md-3" for="status">Status</label>
+						      <label class="control-label col-md-3" for="status">Trạng thái</label>
 						      <div class="controls col-md-7">
 						      	<?php if($app['act'] !='view'){ ?>
 							      	<select name="status" id="input-status" class="form-control">

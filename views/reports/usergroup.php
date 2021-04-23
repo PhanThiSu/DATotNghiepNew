@@ -7,7 +7,7 @@
 	var nopp 		= parseInt(<?php echo $this->records['nopp']; ?>);
 </script>
 
-<?php vendor_html_helper::contentheader('Reports <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Báo cáo công việc', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 <section class="content">
 	<div class="row">
@@ -16,12 +16,9 @@
 			    <div class="box-header with-border row" id="reports-header">
 					<div class="col-sm-6">
 						<h3 class="box-title">
-							<?php if($this->timetype!='all') echo 'Report '.$this->time; else echo 'All reports ';?> of <?= $this->fullname ?><?php
-							if (isset($this->groupName)) echo ' in '.vendor_html_helper::link($this->groupName, ["ctl"=>"leader_groups", "act"=>"view/".$this->group_id]); ?>
+							<?php if($this->timetype!='all') echo 'Report '.$this->time; else echo 'Tất cả báo cáo ';?> của <?= $this->fullname ?><?php
+							if (isset($this->groupName)) echo ' trong nhóm '.vendor_html_helper::link($this->groupName, ["ctl"=>"leader_groups", "act"=>"view/".$this->group_id]); ?>
 						</h3>
-					</div>
-					<div class="col-sm-6">
-						<h3 class="box-title text-info pull-right text-right"> <?php if($this->timetype=='all') echo 'All tasks, '; else echo 'This '.$this->timetype?> <?= $this->fullname ?> have worked <strong class="text-danger"><?=$this->timetotal;?></strong> hour(s)</h3>
 					</div>
 			    </div>
 			    <div class="box-body row">

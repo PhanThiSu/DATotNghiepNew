@@ -1,6 +1,6 @@
 <?php include_once 'views/admin/layout/'.$this->layout.'top.php'; ?>
 
-<?php vendor_html_helper::contentheader('Groups <small>management</small>', [
+<?php vendor_html_helper::contentheader('Quản lý nhóm làm việc', [
     [
       'title' =>  'Groups',
       'urlp'=>['ctl'=>$app['ctl']]],

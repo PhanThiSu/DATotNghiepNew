@@ -4,7 +4,15 @@
 		    <div class="box-body">
 		    	<fieldset>
 				    <div id="legend">
-				      <legend class=""><?php echo ucfirst($app['act'])==="Add"?"Thêm":"Sửa" ;echo " người dùng" ?></legend>
+				      <!-- <legend class=""><?php echo ucfirst($app['act'])==="Add"?"Thêm":"Sửa" ;echo " người dùng" ?></legend> -->
+					  <legend class="">
+              			<?php
+                		if(ucwords($app['act'])==="Add")echo "Thêm người dùng";
+                		else if(ucwords($app['act'])==="Edit") echo "Sửa người dùng";
+                		else if(ucwords($app['act'])==="View") echo "Xem chi tiết";
+               			?>
+              
+              			</legend>
 				    </div>
 				    <?php if($app['act'] != 'view') { ?>
 				    	<form id="form-adduser" action="<?php echo vendor_app_util::url(["ctl"=>"users", "act"=>$app['act'] == 'edit'?$app['act']."/".$this->record['id']:$app['act']]); ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -78,8 +86,10 @@
 						      <!-- Password -->
 						      <label class="control-label col-md-3"  for="password_confirm">Xác nhận mật khẩu</label>
 						      <div class="controls col-md-7">
-						        <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control" value="<?php if(isset($this->record['password_confirm'])) echo($this->record['password_confirm']); ?>">
-						        	<p class="text-danger"></p>
+						        <input type="password" id="password_confirm" name="user[confirmPassword]" placeholder="" class="form-control" >
+								<?php if( isset($this->errors['confirmPassword'])) { ?>
+						        	<p class="text-danger"><?=$this->errors['confirmPassword']; ?></p>
+						        <?php } ?>
 						      </div>
 						    </div>
 

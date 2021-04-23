@@ -3,9 +3,9 @@ class request_model extends  vendor_frap_model
 {
 	public $nopp = 20;
 	public static $status = [
-						0 => 'Unread',
-						1 => 'Approved',
-						2 => 'Rejected'
+						0 => 'Chưa đọc',
+						1 => 'Tán thành',
+						2 => 'Từ chối'
 					];
 
 	protected $relationships = [

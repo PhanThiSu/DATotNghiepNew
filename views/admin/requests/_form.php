@@ -6,7 +6,15 @@
 		    <div class="box-body">
 		    	<fieldset>
 				    <div id="legend">
-				      <legend class=""><?php echo ucwords($app['act'].' '.$app['ctl']); ?></legend>
+				      <!-- <legend class=""><?php echo ucwords($app['act'].' '.$app['ctl']); ?></legend> -->
+					  <legend class="">
+              			<?php
+                		if(ucwords($app['act'])==="Add")echo "Thêm phép";
+                		else if(ucwords($app['act'])==="Edit") echo "Sửa phép";
+                		else if(ucwords($app['act'])==="View") echo "Xem chi tiết";
+               			?>
+              
+              			</legend>
 				    </div>
 				    <?php if($app['act'] != 'view') { ?>
 				    	<form id="form-record" action="<?php echo vendor_app_util::url(["ctl"=>"requests", "act"=>$app['act'] == 'edit'?$app['act']."/".$this->record['id']:$app['act']]); ?>" method="post" enctype="multipart/form-data" class="form-horizontal">
@@ -22,7 +30,7 @@
 
 						    <div class="form-group row user">
 						      <!-- First Name -->
-						      <label class="control-label col-md-3" for="user_id">User :</label>
+						      <label class="control-label col-md-3" for="user_id">Tên người dùng :</label>
 						      <div class="controls col-md-7">
 						      	<?php if($app['act']=='view') { ?>
 						        	<input disabled type="text" id="user_id" name="request[user_id]" placeholder="" class="form-control" <?php echo (isset($this->record))? "value='".$this->record['users_firstname'].' '.$this->record['users_lastname']."'":""; ?>>
@@ -42,7 +50,7 @@
 
 						    <div class="form-group row">
 						      <!-- Date Time Start-->
-						      <label class="control-label col-md-3" for="datetime_start">Date Time Start :</label>
+						      <label class="control-label col-md-3" for="datetime_start">Ngày bắt đầu:</label>
 						      <div class="controls controlsDisplay col-md-7">
 						        <div>
 						        	<input <?php if($app['act']=='view') echo "disabled"; ?> type="text" id="datetime_start" name="request[datetime_start]" placeholder="" class="form-control datetimepicker" <?php echo (isset($this->record))? "value='".str_replace(" ", "T", $this->record['datetime_start'])."'":""; ?>>
@@ -58,7 +66,7 @@
 
 						    <div class="form-group row">
 						      <!-- Date Time End -->
-						      <label class="control-label col-md-3" for="datetime_end">Date Time End</label>
+						      <label class="control-label col-md-3" for="datetime_end">Ngày kết thúc</label>
 						      <div class="controls controlsDisplay col-md-7 datetimepicker">
 						        <div>
 						        	<input <?php if($app['act']=='view') echo "disabled"; ?> type="text" id="datetime_end" name="request[datetime_end]" placeholder="" class="form-control datetimepicker" <?php echo (isset($this->record))? "value='".str_replace(" ", "T", $this->record['datetime_end'])."'":""; ?>>
@@ -74,9 +82,9 @@
 						 
 						    <div class="form-group row">
 						      <!-- E-mail -->
-						      <label class="control-label col-md-3" for="reason">Reason:</label>
+						      <label class="control-label col-md-3" for="reason">Lý do(*)</label>
 						      <div class="controls col-md-7">
-						        <textarea <?php if($app['act']=='view') echo "disabled"; ?> id="reason" name="request[reason]" placeholder="Reason..." class="form-control" value="<?php if(isset($this->record['reason'])) echo($this->record['reason']); ?>"><?php echo (isset($this->record))? " ".$this->record['reason']." ":""; ?></textarea>
+						        <textarea <?php if($app['act']=='view') echo "disabled"; ?> id="reason" name="request[reason]" placeholder="Lý do..." class="form-control" value="<?php if(isset($this->record['reason'])) echo($this->record['reason']); ?>"><?php echo (isset($this->record))? " ".$this->record['reason']." ":""; ?></textarea>
 						        <?php if( isset($this->errors['reason'])) { ?>
 						        	<p class="text-danger"><?=$this->errors['reason']; ?></p>
 						        <?php } ?>
@@ -85,7 +93,7 @@
 
 						    <div class="form-group row">
 						      <!-- Status -->
-						      <label class="control-label col-md-3" for="status">Status</label>
+						      <label class="control-label col-md-3" for="status">Trạng thái</label>
 						      <div class="controls col-md-7">
 						      	<?php if($app['act'] !='view'){ ?>
 							      	<select name="request[status]" id="input-status" class="form-control">
@@ -104,10 +112,17 @@
 
 						    <?php if($app['act'] !='view'){ ?>
 							    <div class="form-group row">
-							      <div class="controls col-md-10">
-							        <input class="btn btn-success pull-right" id="btn_add" type="submit" name="btn_submit" value="<?php echo ucfirst($app['act']) ?>">
-							      </div>
-							    </div>
+                    <div class="controls col-md-10">
+                      <a href="<?php echo vendor_app_util::url(["ctl"=>"requests"]); ?>" class="btn btn-info cancelBtt pull-right">Hủy</a>
+                      <input class="btn btn-success pull-right" id="btn_add" type="submit" name="btn_submit"  value="<?php echo ucfirst($app['act'])==="Add"?"Thêm":"Sửa" ?>">
+                    </div>
+                  </div>
+                <?php } else { ?>
+                    <div class="form-group row">
+                    <div class="controls col-md-10">
+                      <a href="<?php echo vendor_app_util::url(["ctl"=>"requests"]); ?>" class="btn btn-info cancelBtt pull-right">Đóng</a>
+                    </div>
+                  </div>
 						    <?php } ?>
 				    <?php if($app['act'] != 'view') { ?>
 				    	</form>

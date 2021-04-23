@@ -1,6 +1,6 @@
 <?php include_once 'views/admin/layout/'.$this->layout.'top.php'; ?>
 
-<?php vendor_html_helper::contentheader('Users <small>management</small>', [
+<?php vendor_html_helper::contentheader('Quản lý thông tin cá nhân', [
     [
       'title' =>  'Users',
       'urlp'=>['ctl'=>$app['ctl']]],
@@ -18,7 +18,6 @@
 			    <div class="box-header">
 		    		<div class="row" id="requests-header">
 		    			<div class="col-sm-8 col-xs-6">
-			      			<h2 class="box-title">Profile</h2>
 		    			</div>
 
 		    			<div class="col-sm-4 col-xs-6">
@@ -36,7 +35,7 @@
 					    	<fieldset>
 					    		<table class="profile-table">
 					    			<tr>
-					    				<td class="title">Full name :</td>
+					    				<td class="title">Tên người dùng :</td>
 					    				<td><?php echo $this->record['firstname']; ?> <?php echo $this->record['lastname']; ?></td>
 					    			</tr>
 					    			<tr>
@@ -44,19 +43,19 @@
 					    				<td><?php echo $this->record['email']; ?></td>
 					    			</tr>
 					    			<tr>
-					    				<td class="title">Password :</td>
+					    				<td class="title">Mật khẩu :</td>
 					    				<td><input disabled type="Password" name="password" value="<?php echo $this->record['password']; ?>" ></td>
 					    			</tr>
 					    			<tr>
-					    				<td class="title">Phone :</td>
+					    				<td class="title">Số điện thoại :</td>
 					    				<td><?php echo $this->record['phone']; ?></td>
 					    			</tr>
 					    			<tr>
-					    				<td class="title">Address :</td>
+					    				<td class="title">Địa chỉ :</td>
 					    				<td><?php echo $this->record['address']; ?></td>
 					    			</tr>
 					    			<tr>
-					    				<td class="title">Date Of Birth :</td>
+					    				<td class="title">Ngày sinh :</td>
 					    				<td><?php echo $this->record['datebirth']; ?></td>
 					    			</tr>
 					    		</table>

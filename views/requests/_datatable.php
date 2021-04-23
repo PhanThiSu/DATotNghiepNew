@@ -10,13 +10,13 @@
 								<input type="checkbox" name="">
 							</th>
 							<th style="width: 20px;">ID</th>
-							<th style="width: 150px;">Fullname</th>
-							<th style="width: 200px;">Start time</th>
-							<th style="width: 200px;">End time</th>
-							<th class="webShow" style="width: 200px;">Reason</th>
-							<th class="webShow" style="width: 200px;">Date request</th>
+							<th style="width: 150px;">Tên người dùng</th>
+							<th style="width: 200px;">Ngày bắt đầu</th>
+							<th style="width: 200px;">Ngày kết thúc</th>
+							<th class="webShow" style="width: 200px;">Lý do</th>
+							<th class="webShow" style="width: 200px;">Ngày xin phép</th>
 							<!-- <th style="width: 140px;">Status</th> -->
-							<th style="width: 200px;">Action</th>
+							<th style="width: 200px;">Hành động</th>
 						</tr>
 					</thead>
 					<tbody id="tbody-requests" class="records">
@@ -64,13 +64,13 @@
 								<input type="checkbox" name="">
 							</th>
 	                		<th>ID</th>
-							<th style="width: 200px;">Fullname</th>
-							<th style="width: 120px;">Start time</th>
-							<th style="width: 120px;">End time</th>
-							<th class="webShow" style="width: 300px;">Reason</th>
-							<th class="webShow" style="width: 120px;">Date request</th>
+							<th style="width: 200px;">Tên người dùng</th>
+							<th style="width: 120px;">Ngày bắt đầu</th>
+							<th style="width: 120px;">Ngày kết thúc</th>
+							<th class="webShow" style="width: 300px;">Lý do</th>
+							<th class="webShow" style="width: 120px;">Ngày xin phép</th>
 							<!-- <th style="width: 140px;">Status</th> -->
-	                		<th rowspan="1" colspan="1">Action</th>
+	                		<th rowspan="1" colspan="1">Hành động</th>
 	                	</tr>
 	                </tfoot>
 				</table>

@@ -156,7 +156,7 @@ class requests_controller extends vendor_backend_controller
 									<h3>Mr ".$_SESSION['user']['firstname']." ".$_SESSION['user']['lastname']." added request for you.</h3>
 									<br><p>Reason: ".$requestData['reason']."</p><br>
 										<p>Time start off : ".$timeStart." <br>Time end off: ".$timeEnd."</p><br>
-									  <br><p>Click {link to http://pscd.pacificsoftdev.com/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p> 
+									  <br><p>Click {link to http://localhost:81/DAtotnghiep/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p> 
 								";//myNote
 								vendor_app_util::sendMail($title, $content, $nTo, $mTo);
 								header( "Location: ".vendor_app_util::url(array('ctl'=>'requests')));
@@ -197,7 +197,7 @@ class requests_controller extends vendor_backend_controller
 					$title = " Hi ".$fullname." ";
 					$content = "
 						<h3>Mr ".$_SESSION['user']['firstname']." ".$_SESSION['user']['lastname']." has changed for your request off that you requested to system.</h3>
-					  	<br><p>Click {link to http://pscd.pacificsoftdev.com/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p> 
+					  	<br><p>Click {link to http://localhost:81/DAtotnghiep/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p> 
 					";//myNote
 					vendor_app_util::sendMail($title, $content, $nTo, $mTo);
 					}
@@ -252,7 +252,7 @@ class requests_controller extends vendor_backend_controller
 			$title = " Hi ".$fullname." ";
 			$content = "
 				<h3>Mr ".$_SESSION['user']['firstname']." ".$_SESSION['user']['lastname']." has changed for your request off that you requested to system.</h3>
-			  	<br><p>Click {link to http://pscd.pacificsoftdev.com/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p>
+			  	<br><p>Click {link to http://localhost:81/DAtotnghiep/requests } to see more.<br><br>Thanks,<br>Admin TPM.</p>
 			";
 		 	vendor_app_util::sendMail($title, $content, $nTo, $mTo);
 			header( "Location: ".vendor_app_util::url(array('ctl'=>'requests')));

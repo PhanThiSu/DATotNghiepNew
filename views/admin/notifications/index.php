@@ -19,7 +19,7 @@ if(isset($app['prs']['status'])) {
 	var getDisable  = <?=(isset($app['prs']['status']) && ($app['prs']['status']==='0'))? 1:0;?>
 </script>
 
-<?php vendor_html_helper::contentheader('Notifications <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Quản lý thông báo', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 	<div class="row content">
 		<div class="col-xs-12 col-lg-12">
@@ -27,7 +27,6 @@ if(isset($app['prs']['status'])) {
 			    <div class="box-header">
 		    		<div class="row" id="records-header">
 		    			<div class="col-sm-8 col-xs-6">
-			      			<h2 class="box-title">Notifications</h2>
 		    			</div>
 		    			<div class="col-sm-4 col-xs-6">
 							<a href="<?php echo vendor_app_util::url(['ctl'=>'notifications','act'=>'add']); ?>" id="add-record">
@@ -41,79 +40,7 @@ if(isset($app['prs']['status'])) {
 		    		</div>
 			    </div>
 
-				<div class="box-body">
-			    	<div id="table_wrapper" class="dataTables_wrapper form-inline dt-boostrap">
-			    		<div class="row">
-			    			<div class="col-sm-12">
-			    				<table id="table_groups" class="table table-bordered table-striped dataTable" role = "grid" aria-describedby = "example1_info">
-			    					<thead>
-			    						<tr role="row">
-			    							<th id="checAllTop" class="checkAll" style="width: 10px;">
-			    								<input type="checkbox" name="">
-			    							</th>
-			    							<th style="width: 20px;">Title</th>
-			    							
-			    						</tr>
-			    					</thead>
-			    					<tbody id="tbody-groups" class="records">
-									<?php if(empty($this->records['data'])){?>
-										<tr role="row"><td colspan="3"><h3 class="text-danger text-center"> No data</h3></td></tr>
-										<?php }?>
-										<?php $count = 1; foreach ($this->records['data'] as $record) { ?>
-										<li class="treeview">
-											<a href="#">
-												<span class='textFullName'><?= $record['users_firstname']." ".$record['users_lastname'] ?></span>
-												<span><?= $record['title'] ?></span>
-												<span class="pull-right-container">
-													<span class="mr-1"> <i class="fa fa-calendar-check-o"></i> </span>
-													<span class="mr-1 treeview-time"><?= $record['created'] ?></span>
-													<i class="fa fa-angle-right pull-right"></i>
-												</span>
-											</a>
-											<ul class="treeview-menu content_ul" style="background:white;margin-bottom:20px; margin-top:20px;padding:20px;">
-												<li style="white-space:normal;">
-													<h4>Title: <span><?= $record['title'] ?></span></h4></br>
-													<h4>Content:</h4></br>
-													<div class='ml-1'><?= $record['content'] ?></div></br>
-													<h4>By: <span><?= $record['users_firstname']." ".$record['users_lastname'] ?></span></h4>
-												</li>
-											</ul>
-										</li>
-									<?php } ?>
-									<?php if(count($this->records['data'])) { ?>
-			    						<!-- rowDATA -->
-			    						<?php foreach ($this->records['data'] as $record) { ?>
-			    						<tr role="row" id="row<?=$record['id'];?>">
-						                  <td id="<?php echo("checkbox".$record['id']);?>" class="checkboxGroup">
-						                  	<input type="checkbox" name="" alt="<?=$record['id'];?>">
-						                  </td>
-
-						                  
-						                </tr>
-						                <?php } ?>
-						                <!-- rowDATA -->
-									<?php } else { ?>
-										<tr role="row"><td colspan="7"><h3 class="text-danger text-center"> No data </h3></td></tr>
-						            <?php } ?>
-			    					</tbody>
-			    					<tfoot>
-					                	<tr>
-					                		<th rowspan="1" colspan="1" id="checkAllBottom" class="checkAll" style="width: 10px;">
-			    								<input type="checkbox" name="">
-			    							</th>
-					                		<th>Title</th>
-					                	</tr>
-					                </tfoot>
-			    				</table>
-			    			</div>
-			    		</div>
-
-			    		<div class="row">
-			    			<?php vendor_html_helper::pagination($this->records['norecords'], $this->records['nocurp'], $this->records['curp'], $this->records['nopp']); ?>
-			    		</div>
-			    	</div>
-			    </div>
-			    
+			    	
 			    <div class="box-body">
 					<ul class="sidebar-menu" data-widget="tree">
 						<?php if(empty($this->records['data'])){?>
@@ -132,10 +59,10 @@ if(isset($app['prs']['status'])) {
 							</a>
 							<ul class="treeview-menu content_ul" style="background:white;margin-bottom:20px; margin-top:20px;padding:20px;">
 								<li style="white-space:normal;">
-									<h4>Title: <span><?= $record['title'] ?></span></h4></br>
-									<h4>Content:</h4></br>
+									<h4>Chủ đề: <span><?= $record['title'] ?></span></h4></br>
+									<h4>Nội dung:</h4></br>
 									<div class='ml-1'><?= $record['content'] ?></div></br>
-									<h4>By: <span><?= $record['users_firstname']." ".$record['users_lastname'] ?></span></h4>
+									<h4>Từ: <span><?= $record['users_firstname']." ".$record['users_lastname'] ?></span></h4>
 								</li>
 							</ul>
 						</li>

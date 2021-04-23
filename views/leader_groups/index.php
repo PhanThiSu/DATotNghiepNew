@@ -8,30 +8,30 @@
 	var nopp 		= parseInt(<?php echo $this->records['nopp']; ?>);
 </script>
 
-<?php vendor_html_helper::contentheader('Groups <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Nhóm', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 <section class="content">
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="box">
+			<!-- <div class="box">
 			    <div class="box-header with-border">
-		    		<div class="row" id="groups-header">
-		    			<div class="col-sm-8 col-xs-6">
+		    		<!-- <div class="row" id="groups-header">
+		    			<!-- <div class="col-sm-8 col-xs-6">
 									<?php if ($this->noGroups) {  ?>
-			      					<h2 class="box-title">You have been the leader of <a> <?=$this->noGroups ?> </a> groups </h2>
+			      					<h2 class="box-title">Bạn đã làm trưởng của <a> <?=$this->noGroups ?> </a> nhóm </h2>
 										<?php } else { ?>
-			      					<h2 class="box-title">You have not been the leader of any group </h2>
-										<?php } ?>
+			      					<h2 class="box-title">Bạn không phải trưởng của nhóm nào </h2>
+										<?php } ?> 
 		    			</div>
 		    		</div>
-			    </div>
+			    </div> -->
 			    <!-- /.box-header -->
 			    
 			    <div class="box-body">
 			    	<div id="table_wrapper" class="dataTables_wrapper form-inline dt-boostrap">
 			    		<div class="row">
 			    			<div class="col-sm-6">
-			    				<div class="dataTables_length" id="example1_length">
+			    				<!-- <div class="dataTables_length" id="example1_length">
 			    					<label>
 			    						Show
 			    						<select name="example1_length" aria-controls = "example1" class="form-control input-sm">
@@ -43,9 +43,9 @@
 			    						</select>
 			    						entries
 			    					</label>
-			    				</div>
+			    				</div> -->
 			    			</div>
-			    			<div class="col-sm-6">
+			    			<!-- <div class="col-sm-6">
 			    				<div id="table_filter" class="pull-right">
 			    					<label>Search:
 			    						<div class="input-group">
@@ -58,7 +58,7 @@
 										</div>
 			    					</label>
 			    				</div>
-			    			</div>
+			    			</div> -->
 			    		</div>
 
 			    		<div class="row">
@@ -67,11 +67,11 @@
 			    					<thead>
 			    						<tr role="row">
 			    							<th style="width: 50px;">ID</th>
-			    							<th style="width: 200px;">Name</th>
-			    							<th class="webShow" style="width: 120px;">Start date</th>
-			    							<th class="webShow" style="width: 120px;">End date</th>
-			    							<th style="width: 150px;">Status</th>
-			    							<th style="width: 150px;">Action</th>
+			    							<th style="width: 200px;">Tên nhóm</th>
+			    							<th class="webShow" style="width: 120px;">Ngày bắt đầu</th>
+			    							<th class="webShow" style="width: 120px;">Ngày kết thúc</th>
+			    							<th style="width: 150px;">Trạng thái</th>
+			    							<th style="width: 150px;">Hành động</th>
 			    						</tr>
 			    					</thead>
 			    					<tbody id="tbody-groups" class="records">
@@ -81,13 +81,13 @@
 			    						<tr role="row" id="row<?=$record['id'];?>">
 
 						                  <td id="<?php echo("id".$record['id']);?>">
-						                  	<a href="<?php echo (vendor_app_util::url(["ctl"=>"leader_groups", "act"=>"view/".$record['id']])) ?>" id="<?php echo("view".$record['id']);?>">
+						                  	<a href="#" id="<?php echo("view".$record['id']);?>">
 						                  		<?php echo $record['id']; ?>	
 						                  	</a>	
 						                  </td>
 
 						                  <td id="<?php echo("name".$record['id']);?>">
-						                  	<a href="<?php echo (vendor_app_util::url(["ctl"=>"leader_groups", "act"=>"view/".$record['id']])) ?>" id="<?php echo("view".$record['id']);?>">
+						                  	<a href="#" id="<?php echo("view".$record['id']);?>">
 						                  		<?php echo $record['name']; ?> 
 						                  	</a>
 						                  </td>
@@ -119,11 +119,11 @@
 			    					<tfoot>
 					                	<tr>
 					                		<th>ID</th>
-					                		<th>Name</th>
-			    							<th class="webShow" style="width: 100px;">Start date</th>
-			    							<th class="webShow" style="width: 100px;">End date</th>
-					                		<th>Status</th>
-					                		<th rowspan="1" colspan="1">Action</th>
+					                		<th>Tên nhóm</th>
+			    							<th class="webShow" style="width: 100px;">Ngày bắt đầu</th>
+			    							<th class="webShow" style="width: 100px;">Ngày kết thúc</th>
+					                		<th>Trạng thái</th>
+					                		<th rowspan="1" colspan="1">Hành động</th>
 					                	</tr>
 					                </tfoot>
 			    				</table>

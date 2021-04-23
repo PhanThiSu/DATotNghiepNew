@@ -25,6 +25,9 @@ define('ControllerAdminREL', ControllerREL."/".AdminPath);
 define('AdminEmail', 'phanthisu99@gmail.com'); 
 define('UserEmail', 'phanthisu99@gmail.com');
 define('PassEmail', 'fybrsuuwurtwuwsv'); 
+// define('AdminEmail', 'phanthisu99@gmail.com'); 
+// define('UserEmail', 'phanthisu99@gmail.com');
+// define('PassEmail', 'fybrsuuwurtwuwsv'); 
 
 // Global variables
 $app = [];

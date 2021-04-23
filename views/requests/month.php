@@ -8,7 +8,7 @@
 	var nopp 		= parseInt(<?php echo $this->records['nopp']; ?>);
 </script>
 
-<?php vendor_html_helper::contentheader('Requests <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Phép', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 <section class="content">
 	<div class="row">
@@ -21,11 +21,11 @@
 								<div class="form-group">
 								    <label class="sr-only" for="exampleInputAmount">Select month: </label>
 								    <div class="input-group">
-								      	<div class="input-group-addon mobileHide">Select month: </div>
+								      	<div class="input-group-addon mobileHide">Chọn tháng: </div>
 			      						<input type="month" name="month" class="form-control selectInput" id="month" placeholder="Month...">
 			      					</div>
 			      				</div>
-								<button type="submit" class="btn btn-info">Submit</button>
+								<button type="submit" class="btn btn-info">Tìm</button>
 			      			</form>
 		    			</div>
 

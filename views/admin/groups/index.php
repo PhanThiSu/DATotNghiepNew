@@ -7,7 +7,7 @@
 	var nopp 		= parseInt(<?php echo $this->records['nopp']; ?>);
 </script>
 
-<?php vendor_html_helper::contentheader('Groups <small>management</small>', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
+<?php vendor_html_helper::contentheader('Quản lý nhóm làm việc', [['urlp'=>['ctl'=>$app['ctl'], 'act'=>$app['act']]]]); ?>
 
 <section class="content">
 	<div class="row">
@@ -16,7 +16,7 @@
 			    <div class="box-header with-border">
 		    		<div class="row" id="groups-header">
 		    			<div class="col-sm-8 col-xs-6">
-			      			<h2 class="box-title">There are <?=$this->noSuggestionGroups;?> suggestion groups, <?=($this->noGroups-$this->noUseGroups);?> unuse group in <?=$this->noGroups;?> groups</h2>
+			      			<!-- <h2 class="box-title">There are <?=$this->noSuggestionGroups;?> suggestion groups, <?=($this->noGroups-$this->noUseGroups);?> unuse group in <?=$this->noGroups;?> groups</h2> -->
 		    			</div>
 
 		    			<div class="col-sm-4 col-xs-6">
@@ -33,7 +33,7 @@
 			    
 			    <div class="box-body">
 			    	<div id="table_wrapper" class="dataTables_wrapper form-inline dt-boostrap">
-			    		<div class="row">
+			    		<!-- <div class="row">
 			    			<div class="col-sm-6">
 			    				<div class="dataTables_length" id="example1_length">
 			    					<label>
@@ -63,7 +63,7 @@
 			    					</label>
 			    				</div>
 			    			</div>
-			    		</div>
+			    		</div> -->
 
 			    		<div class="row">
 			    			<div class="col-sm-12">
@@ -74,12 +74,12 @@
 			    								<input type="checkbox" name="">
 			    							</th>
 			    							<th style="width: 20px;">ID</th>
-			    							<th style="width: 150px;">Name</th>
-			    							<th class="webShow" style="width: 100px;">Start date</th>
-			    							<th class="webShow" style="width: 100px;">End date</th>
-			    							<th style="width: 100px;">Status</th>
-											<th style="width: 100px;">User created</th>
-			    							<th style="width: 120px;">Action</th>
+			    							<th style="width: 150px;">Tên nhóm</th>
+			    							<th class="webShow" style="width: 100px;">Ngày bắt đầu</th>
+			    							<th class="webShow" style="width: 100px;">Ngày kết thúc</th>
+			    							<th style="width: 100px;">Trạng thái</th>
+											<th style="width: 100px;">Người tạo</th>
+			    							<th style="width: 120px;">Hành động</th>
 			    						</tr>
 			    					</thead>
 			    					<tbody id="tbody-groups" class="records">
@@ -141,12 +141,12 @@
 			    								<input type="checkbox" name="">
 			    							</th>
 					                		<th>ID</th>
-					                		<th>Name</th>
-			    							<th class="webShow" style="width: 100px;">Start date</th>
-			    							<th class="webShow" style="width: 100px;">End date</th>
-					                		<th>Status</th>
-											<th style="width: 100px;">User created</th>
-					                		<th rowspan="1" colspan="1">Action</th>
+					                		<th>Tên nhóm</th>
+			    							<th class="webShow" style="width: 100px;">Ngày bắt đầu</th>
+			    							<th class="webShow" style="width: 100px;">Ngày kết thúc</th>
+					                		<th>Trạng thái</th>
+											<th style="width: 100px;">Người tạo</th>
+					                		<th rowspan="1" colspan="1">Hành động</th>
 					                	</tr>
 					                </tfoot>
 			    				</table>

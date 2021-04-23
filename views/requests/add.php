@@ -2,7 +2,7 @@
 <?php  
 	
 ?>
-<?php vendor_html_helper::contentheader('Requests <small>management</small>', [
+<?php vendor_html_helper::contentheader('Phép', [
     [
       'title' =>  'Index Requests',
       'urlp'=>['ctl'=>$app['ctl']]
